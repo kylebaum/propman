@@ -28,15 +28,41 @@
       <tr>
         <td><%= property.description %></td>
         <td><%= property.address %></td>
-        <td><%= property.city_id %></td>
-        <td><%= property.neighborhood_id %></td>
-        <td><%= property.petpolicy_id %></td>
+        <td>    <% if property.city != nil %>
+              <%= property.city_id %>
+            <% else %>
+              No property city selected
+            <% end %></td>
+        <td>    <% if property.neighborhood != nil %>
+              <%= property.neighborhood_id %>
+            <% else %>
+              No property neighborhood selected
+            <% end %></td>
+        <td>    <% if property.petpolicy != nil %>
+              <%= property.petpolicy_id %>
+            <% else %>
+              No property petpolicy selected
+            <% end %></td>
         <td><%= property.price %></td>
         <td><%= property.numberbed %></td>
         <td><%= property.numberbath %></td>
-        <td><%= property.owner_id %></td>
-        <td><%= property.manager_id %></td>
-        <td><%= property.tenant_id %></td>
+        <td>
+        <% if property.owner != nil %>
+          <%= property.owner_id %>
+        <% else %>
+          No property owner selected
+        <% end %>
+        </td>
+        <td><% if property.manager != nil %>
+          <%= property.manager_id %>
+        <% else %>
+          No property manager selected
+        <% end %></td>
+        <td><% if property.tenant != nil %>
+          <%= property.tenant_id %>
+        <% else %>
+          No property tenant selected
+        <% end %></td>
         <td><%= property.user_id %></td>
         <td>
           <a href="/properties/<%= property.id %>" class="btn btn-primary">Show</a>
