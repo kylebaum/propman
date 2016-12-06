@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h3>Maintenancerequest #<%= @maintenancerequest.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>User</dt>
+      <dd><%= @maintenancerequest.user_id %></dd>
+
+      <dt>Tenant</dt>
+      <dd><%= @maintenancerequest.tenant_id %></dd>
+
+      <dt>Owner</dt>
+      <dd><%= @maintenancerequest.owner_id %></dd>
+
+      <dt>Manager</dt>
+      <dd><%= @maintenancerequest.manager_id %></dd>
+
+      <dt>Property</dt>
+      <dd><%= @maintenancerequest.property_id %></dd>
+
+      <dt>Body</dt>
+      <dd><%= @maintenancerequest.body %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/maintenancerequests" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/maintenancerequests/<%= @maintenancerequest.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_maintenancerequest/<%= @maintenancerequest.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

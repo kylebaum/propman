@@ -1,0 +1,136 @@
+<!-- Validation failure messages -->
+<% if @property.errors.any? %>
+  <% @property.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Property #<%= @property.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_property/<%= @property.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="<%= @property.description %>">
+      </div>
+
+      <!-- Label and input for address -->
+      <div class="form-group">
+        <label for="address" class="control-label">
+          Address
+        </label>
+
+        <input type="text" id="address" name="address" placeholder="Address" class="form-control" value="<%= @property.address %>">
+      </div>
+
+      <!-- Label and input for city_id -->
+      <div class="form-group">
+        <label for="city_id" class="control-label">
+          City
+        </label>
+
+        <input type="text" id="city_id" name="city_id" placeholder="City" class="form-control" value="<%= @property.city_id %>">
+      </div>
+
+      <!-- Label and input for neighborhood_id -->
+      <div class="form-group">
+        <label for="neighborhood_id" class="control-label">
+          Neighborhood
+        </label>
+
+        <input type="text" id="neighborhood_id" name="neighborhood_id" placeholder="Neighborhood" class="form-control" value="<%= @property.neighborhood_id %>">
+      </div>
+
+      <!-- Label and input for petpolicy_id -->
+      <div class="form-group">
+        <label for="petpolicy_id" class="control-label">
+          Petpolicy
+        </label>
+
+        <input type="text" id="petpolicy_id" name="petpolicy_id" placeholder="Petpolicy" class="form-control" value="<%= @property.petpolicy_id %>">
+      </div>
+
+      <!-- Label and input for price -->
+      <div class="form-group">
+        <label for="price" class="control-label">
+          Price
+        </label>
+
+        <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @property.price %>">
+      </div>
+
+      <!-- Label and input for numberbed -->
+      <div class="form-group">
+        <label for="numberbed" class="control-label">
+          Numberbed
+        </label>
+
+        <input type="text" id="numberbed" name="numberbed" placeholder="Numberbed" class="form-control" value="<%= @property.numberbed %>">
+      </div>
+
+      <!-- Label and input for numberbath -->
+      <div class="form-group">
+        <label for="numberbath" class="control-label">
+          Numberbath
+        </label>
+
+        <input type="text" id="numberbath" name="numberbath" placeholder="Numberbath" class="form-control" value="<%= @property.numberbath %>">
+      </div>
+
+      <!-- Label and input for owner_id -->
+      <div class="form-group">
+        <label for="owner_id" class="control-label">
+          Owner
+        </label>
+
+        <input type="text" id="owner_id" name="owner_id" placeholder="Owner" class="form-control" value="<%= @property.owner_id %>">
+      </div>
+
+      <!-- Label and input for manager_id -->
+      <div class="form-group">
+        <label for="manager_id" class="control-label">
+          Manager
+        </label>
+
+        <input type="text" id="manager_id" name="manager_id" placeholder="Manager" class="form-control" value="<%= @property.manager_id %>">
+      </div>
+
+      <!-- Label and input for tenant_id -->
+      <div class="form-group">
+        <label for="tenant_id" class="control-label">
+          Tenant
+        </label>
+
+        <input type="text" id="tenant_id" name="tenant_id" placeholder="Tenant" class="form-control" value="<%= @property.tenant_id %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @property.user_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Property
+      </button>
+      or
+      <a href="/properties/<%= @property.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
